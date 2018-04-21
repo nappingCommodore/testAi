@@ -1,9 +1,20 @@
 from selenium import webdriver
+import unittest
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('headless')
-chrome_options.add_argument('no-sandbox')
-browser = webdriver.Chrome(executable_path=r'/opt/chromedriver', chrome_options=chrome_options)
-browser.get('http://localhost:8000')
 
-assert 'Django' in browser.title
+class BrowserTitleTest(unittest.TestCase):
+    def setUp(self):
+        self.browser = webdriver.Firefox(executable_path=r'/opt/geckodriver')
+        self.browser.implicitly_wait(3)
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def test_to_check_title(self):
+        self.browser.get('http://localhost:8000')
+        self.assertIn('Jarvis', self.browser.title)
+        self.fail('finish the test')
+
+
+if __name__ == '__main__':
+    unittest.main()
