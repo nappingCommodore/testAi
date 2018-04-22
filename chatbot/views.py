@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("<html><title>Jarvis</title></html>")
+    return render(request, "home.html")
 
 
 def jarvis(request):
