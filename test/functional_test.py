@@ -15,6 +15,8 @@ class BrowserTitleTest(unittest.TestCase):
         self.assertIn('Jarvis', self.browser.title)
         # self.fail('finish the test')
 
+    def test_to_check_user_input(self):
+        self.browser.get('http://localhost:8000')
 
 if __name__ == '__main__':
     unittest.main()
