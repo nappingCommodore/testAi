@@ -5,19 +5,22 @@ import datetime
 
 from django.views.decorators.csrf import csrf_protect
 
+
+
+
+message = ["Hello, how are you?"]
+# userOrBot = "bot"
+
 @csrf_protect
 def home(request):
-    t = get_template('home.html')
-    message = ["hi betty", "this is jarvis", "good to go", "hasta la vista"]
-    html = t.render({'message': message})
-    return HttpResponse(html)
-
-def fillChat(request):
-    return {
-        "message": "Hello from the other side."
-    }
-
-def jarvis(request):
-    now = datetime.datetime.now()
-    return HttpResponse(
-        "<div align='center'><h1>Hello, jarvis here!</h1> <p>Time now is %s</p></div>" % now)
+    if request.method == 'POST':
+        msg = request.POST.get("msg")
+        message.append(msg)
+        userOrBot = "you"
+        return render(request, 'home.html', {'message': message},{'userOrBot': userOrBot})
+    else:
+        # t = get_template('home.html')
+        # message = ["hi betty", "this is jarvis", "good to go", "hasta la vista"]
+        # html = t.render({'message': message})
+        userOrBot = "bot"
+        return render(request, 'home.html', {'message': message},{'userOrBot': userOrBot})

@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('jarvis/', views.jarvis, name='jarvis'),
+    path(r'jarvis/', views.home, name='jarvis'),
 ]

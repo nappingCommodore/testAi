@@ -13,10 +13,10 @@
 <body>
     <div class="row">
         <div class="col-md-12">
-            <form action="/getMsg" method="POST"> {% csrf_token %} {% for msg in message %}
-                <label>Message : {{msg}}</label><br/> {% endfor %}
+            <form action="/jarvis/" method="POST"> {% csrf_token %} {% for msg in message %}
+                <label> {% if forloop.counter|divisibleby:2 %}you {% else %}bot {% endif %} : {{msg}}</label><br/> {% endfor %}
                 {% form form=form %}{% endform %}
-                <input type="text" class=""/>
+                <input type="text" name="msg"/>
                 <button type="submit" name="_submit" class="btn">Reply</button>
             </form>
         </div>
