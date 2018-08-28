@@ -4,22 +4,33 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/gif" href="./animated_favicon1.gif"> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script> {% include 'material/includes/material_css.html' %}
-    {% include 'material/includes/material_js.html' %}
-    {% load material_form %} 
+        crossorigin="anonymous"></script>
+        {% include 'material/includes/material_css.html' %} {% include 'material/includes/material_js.html' %} {% load material_form %}
 </head>
 
 <body>
+    {% load staticfiles %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-6">
+            <img src="{% static 'images/chatbot_1x.png' %}" height="300" width="450"/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="align-content: center">
             <form action="/jarvis/" method="POST"> {% csrf_token %} {% for msg in message %}
-                <label> {% if forloop.counter|divisibleby:2 %}you {% else %}bot {% endif %} : {{msg}}</label><br/> {% endfor %}
-                {% form form=form %}{% endform %}
-                <input type="text" name="msg"/>
+                <label> {% if forloop.counter|divisibleby:2 %}you {% else %}bot {% endif %} : {{msg}}</label><br/> 
+                {% endfor %} {% form form=form %}{% endform %}
+                <input type="text" name="msg" />
                 <button type="submit" name="_submit" class="btn">Reply</button>
             </form>
         </div>
+        <div class="col-md-3"></div>
     </div>
 </body>
 
