@@ -2,11 +2,13 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from django.http import HttpResponse
 import datetime
+import random
 import sqlite3
 
 from django.views.decorators.csrf import csrf_protect
 
-message = ["Hello, how are you?"]
+message = ["Hello, My name is Jarvis. How may I help you?"]
+botMsg = ["Hello how are you?", "My name is Jarvis.", "Weather is good today.", "What do you do?", "Okay", "Hmm", "Ohh"]
 # userOrBot = "bot"
 
 @csrf_protect
@@ -23,6 +25,7 @@ def home(request):
             print(e)
         
         message.append(msg)
+        message.append(botReplied())
         return render(request, 'home.html', {'message': message})
     else:
         # t = get_template('home.html')
@@ -30,3 +33,6 @@ def home(request):
         # html = t.render({'message': message})
         return render(request, 'home.html', {'message': message})
     conn.close()
+
+def botReplied():
+    return botMsg[random.randint(0, len(botMsg)-1)]
