@@ -8,7 +8,8 @@ import sqlite3
 from django.views.decorators.csrf import csrf_protect
 
 message = ["Hello, My name is Jarvis. How may I help you?"]
-botMsg = ["Hello how are you?", "My name is Jarvis.", "Weather is good today.", "What do you do?", "Okay", "Hmm", "Ohh"]
+botMsg = ["Hello how are you?", "My name is Jarvis.", "Weather is good today.", "What do you do?", "Okay", "Hmm", "Ohh", "What do you do?"
+            "nice to meet you.", "What is your name?", "Good!!", "Fine", "I didn't get"]
 # userOrBot = "bot"
 
 @csrf_protect
