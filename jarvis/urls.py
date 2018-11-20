@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('chatbot.urls')),
-    path('admin/', admin.site.urls),
+    path('still-harbor-56063.herokuapp.com/admin/', admin.site.urls),
 ]
