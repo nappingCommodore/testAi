@@ -12,3 +12,4 @@ whitenoise==1.0.4
 gunicorn==19.1.1
 psycopg2==2.5.4
 dj-database-url==0.3.0
+
