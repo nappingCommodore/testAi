@@ -12,9 +12,7 @@ from chatterbot import ChatBot
 chatbot = ChatBot("Ron Obvious")
 
 message = ["Hello, My name is Jarvis. How may I help you?"]
-botMsg = ["Hello how are you?", "My name is Jarvis.", "Weather is good today.", "What do you do?", "Okay", "Hmm", "Ohh", "What do you do?"
-            "nice to meet you.", "What is your name?", "Good!!", "Fine", "I didn't get",
-            "Hello",
+botMsg = [  "Hello",
             "Hi there!",
             "How are you doing?",
             "I'm doing great.",
@@ -51,6 +49,7 @@ def home(request):
 def botReplied(msg):
     chatbot.train(botMsg)
     response = chatbot.get_response(msg)
+    botMsg.append(msg)
     botMsg.append(response)
     # return botMsg[random.randint(0, len(botMsg)-1)]
     return response
