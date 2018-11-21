@@ -11,5 +11,6 @@ urllib3==1.22
 whitenoise==1.0.4
 gunicorn==19.1.1
 dj-database-url==0.3.0
+chatterbot==0.8.7
 
 
