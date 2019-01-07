@@ -4,18 +4,19 @@ from django.http import HttpResponse
 import datetime
 import random
 import sqlite3
-from chatterbot.trainers import ListTrainer
-from chatterbot.trainers import ChatterBotCorpusTrainer
-from chatterbot.trainers import UbuntuCorpusTrainer
+# from chatterbot.trainers import ListTrainer
+# from chatterbot.trainers import ChatterBotCorpusTrainer
+# from chatterbot.trainers import UbuntuCorpusTrainer
 
 from django.views.decorators.csrf import csrf_protect
+from .train import chatbot
 
-from chatterbot import ChatBot
-chatbot = ChatBot("Ron Obvious")
-chatbot.set_trainer(ChatterBotCorpusTrainer)
-chatbot.train(
-    "chatterbot.corpus.english"
-)
+# from chatterbot import ChatBot
+# chatbot = ChatBot("Ron Obvious")
+# chatbot.set_trainer(ChatterBotCorpusTrainer)
+# chatbot.train(
+#     "chatterbot.corpus.english"
+# )
 
 # chatbot.set_trainer(UbuntuCorpusTrainer)
 # chatbot.train()
