@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -27,7 +27,7 @@ SECRET_KEY = 'xigv6n-p#g+j&xu)l7nk67tl1^)a)hoz@bfcv8sivphf(z^asq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['still-harbor-56063.herokuapp.com']
+ALLOWED_HOSTS = ['still-harbor-56063.herokuapp.com','localhost','127.0.0.1']
 
 # Application definition
 

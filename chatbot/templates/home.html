@@ -24,7 +24,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6" style="align-content: center">
             <form action="/jarvis/" method="POST"> {% csrf_token %} {% for msg in message %}
-                <label> {% if forloop.counter|divisibleby:2 %}you {% else %}bot {% endif %} : {{msg}}</label><br/> 
+                <label><div style="color: black"> {% if forloop.counter|divisibleby:2 %}you {% else %}bot {% endif %} : {{msg}}</div></label><br/> 
                 {% endfor %} {% form form=form %}{% endform %}
                 <input type="text" name="msg" />
                 <button type="submit" name="_submit" class="btn">Reply</button>

@@ -5,11 +5,20 @@ import datetime
 import random
 import sqlite3
 from chatterbot.trainers import ListTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import UbuntuCorpusTrainer
 
 from django.views.decorators.csrf import csrf_protect
 
 from chatterbot import ChatBot
 chatbot = ChatBot("Ron Obvious")
+chatbot.set_trainer(ChatterBotCorpusTrainer)
+chatbot.train(
+    "chatterbot.corpus.english"
+)
+
+# chatbot.set_trainer(UbuntuCorpusTrainer)
+# chatbot.train()
 
 message = ["Hello, My name is Jarvis. How may I help you?"]
 botMsg = [  "Hello",
@@ -21,7 +30,7 @@ botMsg = [  "Hello",
             "You're welcome."]
 # userOrBot = "bot"
 
-chatbot.set_trainer(ListTrainer)
+# chatbot.set_trainer(ListTrainer)
 
 @csrf_protect
 def home(request):
@@ -47,9 +56,9 @@ def home(request):
     conn.close()
 
 def botReplied(msg):
-    chatbot.train(botMsg)
+    # chatbot.train(botMsg)
     response = chatbot.get_response(msg)
-    botMsg.append(msg)
-    botMsg.append(response)
+    # botMsg.append(msg)
+    # botMsg.append(response)
     # return botMsg[random.randint(0, len(botMsg)-1)]
     return response
