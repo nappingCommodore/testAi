@@ -43,6 +43,17 @@ INSTALLED_APPS = [
     'rest_framework',
     'chatbot',
 ]
+
+CHATTERBOT = {
+    'name': 'Heroku ChatterBot Example',
+    'logic_adapters' : [
+        "chatterbot.logic.BestMatch"
+    ],
+    'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
+    'training_data': [
+        'chatterbot.corpus'
+    ]
+}
     
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
