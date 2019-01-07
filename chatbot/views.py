@@ -11,11 +11,11 @@ from chatterbot.trainers import UbuntuCorpusTrainer
 from django.views.decorators.csrf import csrf_protect
 
 from chatterbot import ChatBot
-# chatbot = ChatBot("Ron Obvious")
-# chatbot.set_trainer(ChatterBotCorpusTrainer)
-# chatbot.train(
-#     "chatterbot.corpus.english"
-# )
+chatbot = ChatBot("Ron Obvious")
+chatbot.set_trainer(ChatterBotCorpusTrainer)
+chatbot.train(
+    "chatterbot.corpus.english"
+)
 
 # chatbot.set_trainer(UbuntuCorpusTrainer)
 # chatbot.train()
