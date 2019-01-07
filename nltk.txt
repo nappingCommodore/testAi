@@ -1,0 +1,4 @@
+chatterbot
+wordnet
+pros_cons
+reuters
