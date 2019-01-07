@@ -3,3 +3,4 @@ applications:
 - name: Jarvis
   memory: 512M
   instances: 2
+  buildpack: python_buildpack

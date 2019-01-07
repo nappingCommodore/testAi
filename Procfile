@@ -1,1 +1,1 @@
-web: gunicorn jarvis.wsgi --workers 2
+web: python manage.py collectstatic --noinput && gunicorn jarvis.wsgi --workers 2

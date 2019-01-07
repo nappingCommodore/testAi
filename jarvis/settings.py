@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -27,7 +29,7 @@ SECRET_KEY = 'xigv6n-p#g+j&xu)l7nk67tl1^)a)hoz@bfcv8sivphf(z^asq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['still-harbor-56063.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['still-harbor-56063.herokuapp.com','localhost','127.0.0.1','jarvis-insightful-zebra.cfapps.io']
 
 # Application definition
 
@@ -89,12 +91,16 @@ WSGI_APPLICATION = 'jarvis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# LOCAL_SQLITE='sqlite:///' + os.path.abspath(os.path.join(BASE_DIR, '../database/db.sqlite3'))
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(default=LOCAL_SQLITE)
 
 
 # Password validation

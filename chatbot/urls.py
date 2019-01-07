@@ -6,5 +6,5 @@ from . import train
 urlpatterns = [
     path('', views.home, name='home'),
     path(r'jarvis/', views.home, name='jarvis'),
-    path(r'train/', train.training, name='train')
+    # path(r'train/', train.training, name='train')
 ]
