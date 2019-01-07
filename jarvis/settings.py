@@ -29,7 +29,7 @@ SECRET_KEY = 'xigv6n-p#g+j&xu)l7nk67tl1^)a)hoz@bfcv8sivphf(z^asq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['still-harbor-56063.herokuapp.com','localhost','127.0.0.1','jarvis-insightful-zebra.cfapps.io']
+ALLOWED_HOSTS = ['obscure-sierra-97692.herokuapp.com','still-harbor-56063.herokuapp.com','localhost','127.0.0.1','jarvis-insightful-zebra.cfapps.io']
 
 # Application definition
 
