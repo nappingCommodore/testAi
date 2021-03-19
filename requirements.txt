@@ -1,6 +1,6 @@
 Django==2.2.13
 django-material==1.2.5
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 regex==2017.4.5
 reportlab==3.4.0
 requests==2.20.0
