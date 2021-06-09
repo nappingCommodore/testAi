@@ -1,4 +1,4 @@
-Django==2.2.13
+Django==2.2.22
 django-material==1.2.5
 djangorestframework==3.9.1
 regex==2017.4.5
